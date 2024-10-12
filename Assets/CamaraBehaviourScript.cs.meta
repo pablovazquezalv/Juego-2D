@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: e719850f5e57a4c4db2e6696f28b085f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - asteroide: {fileID: 1133915673276736249, guid: 00e714214d09d41c7a15dd203b394f01, type: 3}
+  - enemigos: {fileID: 3584497950835569069, guid: 0c1187812aa5141a9ae4d552601cefca, type: 3}
+  - powerup_bala_doble: {fileID: 996644483757076683, guid: 6b6195b17365b46588c913d9e388d321, type: 3}
+  - powerup_vida: {fileID: 2479521541960624725, guid: 26277e8abf16b40f58f0ae69ec00e05a, type: 3}
+  - powerup2: {fileID: 7175628346949089899, guid: 735f92bd2e4e742c782c69bb988119c9, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
