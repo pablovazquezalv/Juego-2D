@@ -28,7 +28,6 @@ public class CamaraBehaviourScript : MonoBehaviour
     
     SoundBehaviourScript script;
 
-    // Start is called before the first frame update
     void Start()
     {
          script = GameObject.FindGameObjectWithTag("sound").GetComponent<SoundBehaviourScript>();
@@ -37,7 +36,7 @@ public class CamaraBehaviourScript : MonoBehaviour
         //aparece enemigo cada 5 segundos
         next_spawn_enemigos = Time.time + 1f;
 
-        next_spawn_enemigos2 = Time.time + 1f;
+        next_spawn_enemigos2 = Time.time + 4f;
 
         next_spawn_powerup_vida = Time.time + 10f;
         //aparece powerup cada 10 segundos
@@ -75,14 +74,14 @@ public class CamaraBehaviourScript : MonoBehaviour
             case 3: // Derecha
                 spawnPosition = new Vector2(12f, Random.Range(-7f, 7f)); // X positivo
                 break;
+            
         }
 
             Instantiate(asteroide, spawnPosition, Quaternion.identity);
                 next_spawn_asteoroides = Time.time + 2f; 
         }
 
-
-
+        // ENEMIGOS 1
         if (Time.time > next_spawn_enemigos)
         {
 
@@ -92,16 +91,19 @@ public class CamaraBehaviourScript : MonoBehaviour
           switch (spawnSide)
         {
             case 0: // Arriba
-                spawnPosition = new Vector2(Random.Range(-7f, 7f), 4f); // Y positivo
+                spawnPosition = new Vector2(Random.Range(-8f, 8f), 6f); // Y positivo
                 break;
             case 1: // Abajo
-                spawnPosition = new Vector2(Random.Range(-7f, 7f), -4f); // Y negativo
+                spawnPosition = new Vector2(Random.Range(-8f, 8f), -6f); // Y negativo
                 break;
             case 2: // Izquierda
-                spawnPosition = new Vector2(-7f, Random.Range(-7f, 7f)); // X negativo
+            Debug.Log("entre a izquierda");
+                spawnPosition = new Vector2(-8f, Random.Range(-4f, 4f)); // X negativo
                 break;
             case 3: // Derecha
-                spawnPosition = new Vector2(6f, Random.Range(-7f, 7f)); // X positivo
+                Debug.Log("entre a derecha");
+
+                spawnPosition = new Vector2(8f, Random.Range(-4f, 4f)); // X positivo
                 break;
         }
 
@@ -120,16 +122,18 @@ public class CamaraBehaviourScript : MonoBehaviour
           switch (spawnSide)
         {
             case 0: // Arriba
-                spawnPosition = new Vector2(Random.Range(-7f, 7f), 7f); // Y positivo
+                spawnPosition = new Vector2(Random.Range(-8f, 8f), 6f); // Y positivo
                 break;
             case 1: // Abajo
-                spawnPosition = new Vector2(Random.Range(-7f, 7f), -8f); // Y negativo
+                spawnPosition = new Vector2(Random.Range(-8f, 8f), -6f); // Y negativo
                 break;
             case 2: // Izquierda
-                spawnPosition = new Vector2(-7f, Random.Range(-7f, 7f)); // X negativo
+                Debug.Log("entre a izquierda");
+                spawnPosition = new Vector2(-8f, Random.Range(-4f, 4f)); // X negativo
                 break;
             case 3: // Derecha
-                spawnPosition = new Vector2(6f, Random.Range(-7f, 7f)); // X positivo
+                 Debug.Log("entre a derecha");
+                spawnPosition = new Vector2(8f, Random.Range(-4f, 4f)); // X positivo
                 break;
         }
 
@@ -139,7 +143,7 @@ public class CamaraBehaviourScript : MonoBehaviour
 
         }
 
-        
+        //BALA DOBLE
         if (Time.time > next_powerup_bala_doble)
         {
 
@@ -152,7 +156,7 @@ public class CamaraBehaviourScript : MonoBehaviour
             }
 
         }
-
+         //BALA AZUL 
         if(Time.time > next_spawn_powerup_bala_azul)
         {
             int powerup_bala_azul_spawned = PlayerPrefs.GetInt("powerup_bala_azul_spawned");
@@ -165,8 +169,7 @@ public class CamaraBehaviourScript : MonoBehaviour
             }
         }
 
-
-
+        //VIDAS
         if (Time.time > next_spawn_powerup_vida)
         {
             int vidas = PlayerPrefs.GetInt("hits");

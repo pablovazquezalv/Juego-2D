@@ -13,7 +13,7 @@ public class EnemigoBalaScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemyball_velocity.y = -.05f;
+       // enemyball_velocity.y = .05f;
     }
 
     // Update is called once per frame
